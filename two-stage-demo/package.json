@@ -1,20 +1,49 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
-  "description": "",
+  "name": "circleci-demo-project",
+  "version": "1.0.0",
+  "description": "Demo project for evaluating circleci pipeline",
+  "main": "index.js",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "start": "node dist/index.js",
+    "dev": "concurrently 'tsc --watch' 'nodemon -q dist/index.js'",
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PieroNarciso/circleci-demo-project.git"
+  },
+  "keywords": [
+    "circleci",
+    "typescript",
+    "express"
+  ],
+  "author": "Piero Narciso",
   "license": "MIT",
-  "devDependencies": {
-    "typescript": "^4.8.2",
-    "vite": "^3.0.9",
-    "vite-plugin-solid": "^2.3.0"
+  "bugs": {
+    "url": "https://github.com/PieroNarciso/circleci-demo-project/issues"
   },
+  "homepage": "https://github.com/PieroNarciso/circleci-demo-project#readme",
   "dependencies": {
-    "solid-js": "^1.5.1"
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/express": "^4.17.14",
+    "@types/jest": "^29.1.1",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.8.2",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "babel-jest": "^29.1.2",
+    "concurrently": "^7.4.0",
+    "eslint": "^8.24.0",
+    "jest": "^29.1.2",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
   }
 }
